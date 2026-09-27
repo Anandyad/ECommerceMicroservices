@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using OrderService.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
-
+builder.Services.AddDbContext<OrderDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("OrderDb")));
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
