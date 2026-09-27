@@ -3,4 +3,8 @@
   <Project Path="OrderService.Application/OrderService.Application.csproj" />
   <Project Path="OrderService.Domain/OrderService.Domain.csproj" />
   <Project Path="OrderService.Infrastructure/OrderService.Infrastructure.csproj" />
+  <Project Path="ProductService.Api/ProductService.Api.csproj" Id="c5c4d7ea-d6da-472b-b599-edc92edb881c" />
+  <Project Path="ProductService.Application/ProductService.Application.csproj" Id="fa0acbd5-cee9-4b23-888c-3dfc5012fcd8" />
+  <Project Path="ProductService.Domain/ProductService.Domain.csproj" Id="972e49f4-097c-47ed-acbe-ac21b40438f5" />
+  <Project Path="ProductService.Infrastructure/ProductService.Infrastructure.csproj" Id="38d48f3a-aa79-4a86-8eb3-168470ab38b4" />
 </Solution>
