@@ -21,7 +21,7 @@ namespace OrderService.Domain.Entities
         public DateTimeOffset UpdatedAt { get; private set; }
 
         public int Version { get; private set; }
-       // public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
+        public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
         public Order(Guid customerId)
         {
             if (customerId == Guid.Empty)

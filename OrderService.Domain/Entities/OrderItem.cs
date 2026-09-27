@@ -4,6 +4,7 @@ namespace OrderService.Domain.Entities
 {
     public sealed class OrderItem
     {
+        public Guid OrderId { get; private set; }
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
 

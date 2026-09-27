@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OrderService.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -16,24 +15,22 @@ namespace OrderService.Infrastructure.Persistence.Configurations
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.CustomerId)
-                .IsRequired();
+            builder.Property(x => x.CustomerId).IsRequired();
 
-            builder.Property(x => x.Status)
-                .IsRequired();
+            builder.Property(x => x.Status).IsRequired();
 
-            builder.Property(x => x.TotalAmount)
-                .HasPrecision(18, 2)
-                .IsRequired();
+            builder.Property(x => x.TotalAmount).HasPrecision(18, 2).IsRequired();
 
-            builder.Property(x => x.CreatedAt)
-                .IsRequired();
+            builder.Property(x => x.CreatedAt).IsRequired();
 
-            builder.Property(x => x.UpdatedAt)
-                .IsRequired();
+            builder.Property(x => x.UpdatedAt).IsRequired();
 
-            builder.Property(x => x.Version)
-                .IsRequired();
+            builder.Property(x => x.Version).IsRequired();
+
+            builder.HasMany(x => x.Items)
+    .WithOne()
+    .HasForeignKey(x => x.OrderId)
+    .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
